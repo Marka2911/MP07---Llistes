@@ -30,7 +30,6 @@ object repositoryFake{
         "Saga de Granola",
         "Saga Super Hero"
     )
-
     private fun CrearGuerrerZ( num : Int) : GuerrersZ{
         val nomGuerrer = Random.nextInt(0, Noms.size)
         val etapaGuerrer = Random.nextInt(0, Etapa.size)
@@ -41,7 +40,8 @@ object repositoryFake{
             vida = Random.nextInt(0, 100),
             unitatsDePoder = Random.nextInt(0, 100),
             velocitat = Random.nextInt(0, 100),
-            defensa = Random.nextInt(0, 100)
+            defensa = Random.nextInt(0, 100),
+            esEvil = Random.nextBoolean()
         )
     }
     public fun obtenirDadesGuerrersZ() =

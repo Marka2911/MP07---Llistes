@@ -32,7 +32,11 @@ fun CartaBolaDeDrac(
     guerrersZ: List<GuerrersZ> = repositoryFake.obtenirDadesGuerrersZ(),
     onClickGuerrersZ: (Int) -> Unit = {}
 ) {
+    var marvao = "Heroi"
     val personatje = guerrersZ[Random.nextInt(guerrersZ.size)]
+    if (!personatje.esEvil) {
+        marvao = "Vilà"
+    }
 
     Column(
         modifier = Modifier
@@ -64,6 +68,25 @@ fun CartaBolaDeDrac(
                 text = personatje.id.toString(),
                 modifier = Modifier.align(Alignment.CenterVertically),
                 textAlign = TextAlign.Right
+            )
+        }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(0.25f)
+                .padding(10.dp)
+                .background(color = MaterialTheme.colorScheme.secondaryContainer),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            // Left-aligned text (name)
+            Text(
+
+                text = marvao,
+                modifier = Modifier
+                    .weight(1f),
+                textAlign = TextAlign.Left,
+                style = TextStyle(fontSize = 20.sp),
+                color = MaterialTheme.colorScheme.onSecondaryContainer
             )
         }
         Row(

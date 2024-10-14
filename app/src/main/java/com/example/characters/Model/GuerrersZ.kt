@@ -7,5 +7,6 @@ class GuerrersZ (
     val vida: Int,
     val unitatsDePoder: Int,
     val velocitat : Int,
-    val defensa : Int
+    val defensa : Int,
+    val esEvil : Boolean
 )
