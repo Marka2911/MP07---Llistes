@@ -38,9 +38,9 @@ object repositoryFake{
             id = num,
             nom = "${Noms[nomGuerrer]} ${Etapa[etapaGuerrer]}",
             foto = "https://loremflickr.com/320/240/dbz?lock=$num",
-            vida = Random.nextInt(0, 500),
-            unitatsDePoder = Random.nextInt(0, 10000),
-            velocitat = Random.nextInt(0, 1000),
+            vida = Random.nextInt(0, 100),
+            unitatsDePoder = Random.nextInt(0, 100),
+            velocitat = Random.nextInt(0, 100),
             defensa = Random.nextInt(0, 100)
         )
     }
