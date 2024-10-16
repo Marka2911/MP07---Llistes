@@ -31,16 +31,16 @@ object repositoryFake{
         "Saga Super Hero"
     )
     private fun CrearGuerrerZ( num : Int) : GuerrersZ{
-        val nomGuerrer = Random.nextInt(0, Noms.size)
-        val etapaGuerrer = Random.nextInt(0, Etapa.size)
+        val nomBD = Random.nextInt(0, Noms.size)
+        val etapaBD = Random.nextInt(0, Etapa.size)
         return GuerrersZ(
             id = num,
-            nom = "${Noms[nomGuerrer]} ${Etapa[etapaGuerrer]}",
+            nom = "${Noms[nomBD]} ${Etapa[etapaBD]}",
             foto = "https://loremflickr.com/320/240/dbz?lock=$num",
-            vida = Random.nextInt(0, 100),
+            ki = Random.nextInt(0, 100),
             unitatsDePoder = Random.nextInt(0, 100),
-            velocitat = Random.nextInt(0, 100),
-            defensa = Random.nextInt(0, 100),
+            energia = Random.nextInt(0, 100),
+            transformacions = Random.nextInt(0, 4),
             esEvil = Random.nextBoolean()
         )
     }

@@ -4,9 +4,9 @@ class GuerrersZ (
     val id: Int,
     val nom: String,
     val foto: String,
-    val vida: Int,
+    val ki: Int,
     val unitatsDePoder: Int,
-    val velocitat : Int,
-    val defensa : Int,
+    val energia : Int,
+    val transformacions : Int,
     val esEvil : Boolean
 )

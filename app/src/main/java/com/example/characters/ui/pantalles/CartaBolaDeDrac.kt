@@ -96,7 +96,7 @@ fun CartaBolaDeDrac(
                 .padding(10.dp)
                 .background(color = MaterialTheme.colorScheme.secondaryContainer),
             verticalAlignment = Alignment.CenterVertically
-        ){
+        ) {
             AsyncImage(
                 model = ImageRequest
                     .Builder(LocalContext.current)
@@ -122,90 +122,24 @@ fun CartaBolaDeDrac(
                 .padding(10.dp)
                 .background(color = MaterialTheme.colorScheme.secondaryContainer),
             verticalAlignment = Alignment.CenterVertically
-        ){
+        ) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(10.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                // Power bar
-                Column(
-                    modifier = Modifier
-                        .weight(1f)
-                        .padding(end = 4.dp)
-                ) {
-                    Text(text = "Power", style = TextStyle(fontSize = 12.sp))
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(20.dp)
-                            .background(Color.LightGray) // Background bar
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .fillMaxWidth(fraction = personatje.unitatsDePoder / 100f)
-                                .fillMaxHeight()
-                                .background(Color.Red) // Power stat bar
-                        )
-                    }
-                }
 
-                // Defense bar
-                Column(
-                    modifier = Modifier
-                        .weight(1f)
-                        .padding(horizontal = 4.dp)
-                ) {
-                    Text(text = "Defense", style = TextStyle(fontSize = 12.sp))
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(20.dp)
-                            .background(Color.LightGray) // Background bar
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .fillMaxWidth(fraction = personatje.defensa / 100f)
-                                .fillMaxHeight()
-                                .background(Color.Blue) // Defense stat bar
-                        )
-                    }
-                }
-
-                // Life bar
-                Column(
-                    modifier = Modifier
-                        .weight(1f)
-                        .padding(horizontal = 4.dp)
-                ) {
-                    Text(text = "Life", style = TextStyle(fontSize = 12.sp))
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(20.dp)
-                            .background(Color.LightGray) // Background bar
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .fillMaxWidth(fraction = personatje.vida / 100f)
-                                .fillMaxHeight()
-                                .background(Color.Green) // Life stat bar
-                        )
-                    }
-                }
-
-                // Another Defense bar (if needed)
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(10.dp)
                 ) {
                     // Life bar
                     Column(
-                        modifier = Modifier.padding(bottom = 8.dp)
+                        modifier = Modifier
+                            .padding(8.dp)
                     ) {
-                        Text(text = "Vida", style = TextStyle(fontSize = 12.sp))
+                        Text(text = "Ki", style = TextStyle(fontSize = 12.sp))
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -214,21 +148,24 @@ fun CartaBolaDeDrac(
                         ) {
                             Box(
                                 modifier = Modifier
-                                    .fillMaxWidth(fraction = personatje.vida / 100f)
+                                    .fillMaxWidth(fraction = personatje.ki / 100f)
                                     .fillMaxHeight()
                                     .background(color = MaterialTheme.colorScheme.onPrimaryContainer) // Life stat bar
                             )
                         }
                     }
 
+
                     // Power bar
                     Column(
-                        modifier = Modifier.padding(bottom = 8.dp)
+                        modifier = Modifier
+                            .padding(8.dp)
                     ) {
                         Text(text = "Unitats de Poder", style = TextStyle(fontSize = 12.sp))
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
+
                                 .height(20.dp)
                                 .background(Color.LightGray) // Background bar
                         ) {
@@ -243,9 +180,10 @@ fun CartaBolaDeDrac(
 
                     // Defense bar
                     Column(
-                        modifier = Modifier.padding(bottom = 8.dp)
+                        modifier = Modifier
+                            .padding(8.dp)
                     ) {
-                        Text(text = "Defensa", style = TextStyle(fontSize = 12.sp))
+                        Text(text = "Energia", style = TextStyle(fontSize = 12.sp))
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -254,7 +192,7 @@ fun CartaBolaDeDrac(
                         ) {
                             Box(
                                 modifier = Modifier
-                                    .fillMaxWidth(fraction = personatje.defensa / 100f)
+                                    .fillMaxWidth(fraction = personatje.energia / 100f)
                                     .fillMaxHeight()
                                     .background(color = MaterialTheme.colorScheme.onPrimaryContainer) // Life stat bar
                             )
@@ -263,22 +201,11 @@ fun CartaBolaDeDrac(
 
                     // Speed bar
                     Column(
-                        modifier = Modifier.padding(bottom = 8.dp)
+                        modifier = Modifier
+                            .padding(8.dp)
                     ) {
-                        Text(text = "Velocitat", style = TextStyle(fontSize = 12.sp))
-                        Box(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(20.dp)
-                                .background(Color.LightGray) // Background bar
-                        ) {
-                            Box(
-                                modifier = Modifier
-                                    .fillMaxWidth(fraction = personatje.velocitat / 100f)
-                                    .fillMaxHeight()
-                                    .background(color = MaterialTheme.colorScheme.onPrimaryContainer) // Life stat bar
-                            )
-                        }
+                        Text(text = "Transformacions - ${personatje.transformacions.toString()}", style = TextStyle(fontSize = 12.sp))
+
                     }
                 }
             }
